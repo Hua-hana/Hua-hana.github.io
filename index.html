@@ -145,6 +145,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://hua-hana.github.io/2021/02/08/Tencent-intern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hana">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hana从零开始的环境配置">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/08/Tencent-intern/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-08 18:14:12" itemprop="dateCreated datePublished" datetime="2021-02-08T18:14:12+08:00">2021-02-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h2 id="2021-2-5-腾讯实习面试"><a href="#2021-2-5-腾讯实习面试" class="headerlink" title="2021/2/5 腾讯实习面试"></a>2021/2/5 腾讯实习面试</h2><p>我面的是测试开发岗位，当时看到岗位的要求是程序语言，编译方面的能力，但是面试的时候却没有涉及。面试官sky只问了我简历上的个人项目，而对我其他的经历貌似没有兴趣，对于我的专业技能，他也只关注我大一学的数据结构，问我是不是写了很多算法题，而对我大二大三的经历没有关注。总之这次的面试经验不太好，一来自己对大一学的内容没有复习，忘了很多，再者感觉这次面试对深入计算机的知识没有考察。</p>
+<h3 id="C-的内存分配方式"><a href="#C-的内存分配方式" class="headerlink" title="C++的内存分配方式"></a>C++的内存分配方式</h3><p>面试官问了我C++内存的分配方式，我之前对这个使用的不多，只知道new和delete操作</p>
+<p>后来网上查了查发现回答得完全错误，这里做一个总结</p>
+<ul>
+<li>静态内存分配：编译时就能推断变量的大小，自动分配空间（应该会占据可执行文件的空间elf）</li>
+<li>动态内存分配：编译时不知道变量的空间大小，运行时确定，需要去与操作系统交互（C++中：new&amp;delete, malloc&amp;free）</li>
+</ul>
+<p>C++中的使用：</p>
+<ul>
+<li>new操作是基于free store，而malloc基于堆（OS中的概念）</li>
+<li>new分配失败时，返回的是一个exception——bad_alloc，需要catch。而malloc分配失败只是返回NULL</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://hua-hana.github.io/2021/02/06/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -273,7 +343,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
