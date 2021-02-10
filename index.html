@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://hua-hana.github.io/2021/02/09/Tencent-intern/">
+    <link itemprop="mainEntityOfPage" href="https://hua-hana.github.io/2021/02/10/Tencent-intern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/09/Tencent-intern/" class="post-title-link" itemprop="url">2021/2/5 腾讯实习面试</a>
+            <a href="/2021/02/10/Tencent-intern/" class="post-title-link" itemprop="url">2021/2/5 腾讯实习面试</a>
         </h2>
 
         <div class="post-meta">
@@ -169,7 +169,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-02-09 11:34:11" itemprop="dateCreated datePublished" datetime="2021-02-09T11:34:11+08:00">2021-02-09</time>
+              <time title="Created: 2021-02-10 12:44:22" itemprop="dateCreated datePublished" datetime="2021-02-10T12:44:22+08:00">2021-02-10</time>
             </span>
 
           
@@ -206,7 +206,24 @@
 <ul>
 <li><strong>函数重载_overload</strong>：在同一个类中，同名，不同参，作用域相同的函数</li>
 <li><strong>函数隐藏_overhide</strong>：若想调用不同类的同名同参函数，则要加上类名::fun</li>
-<li><strong>函数覆写_override</strong>：基类中为虚函数，子类实例化该函数</li>
+<li><strong>函数覆写_override</strong>：基类中为虚函数，子类覆盖该函数</li>
+</ul>
+<p>为什么需要虚函数：父类和子类拥有同一个函数（同名同参），但是实现方法不同</p>
+<p><strong>虚函数实现多态的原理</strong>：</p>
+<ul>
+<li>每个类的虚函数的地址存在属于这个类的虚函数表中，这个类所实现的对象的地址空间中，首先4个字节就是指向这个虚函数表的虚指针<code>vptr</code></li>
+<li>当一个基类类型的对象被赋值一个派生类的对象时，由于类对象的内存空间是先基类再派生类，而且派生类赋值给基类时是只把基类的内容拷贝而已。所以按这个思路，派生类的<code>vptr</code>会当作基类的内容赋值给基类的<code>vptr</code>，所以就完成了虚函数表的转换，之后这个基类对象调用虚函数时都会调用派生类覆盖了的虚函数</li>
+</ul>
+<p><strong>一些虚函数的注意问题</strong>：</p>
+<ul>
+<li><code>virtual</code>关键字是为了呈现给自己的派生类，说明这个函数可以覆盖</li>
+<li>关于虚析构函数，由于虚函数用的哪种实现依赖于对象，所以如果派生类是new出来的，而把它赋给基类指针，那么如果不把析构函数实现为虚函数的话，就无法通过这个基类指针析构这个对象，所以这种情况需要把析构函数实现为虚函数，把它的地址放在虚函数表</li>
+<li>若基类<code>Base</code>实现了一个虚函数<code>virtual show(int a=30)</code>，而<code>Derive</code>实现了一个<code>virtual show(int a=40)</code>，那么多态发生时（比如派生类对象赋给基类指针，<code>Base *p=new Derive();p-&gt;show()</code>），show的是a=30。原因是这个是在编译时完成的，编译器看到指针为Base类，所以根据Base的函数默认值来push到栈中</li>
+<li>若将虚函数show放在派生类的private,protected限定符里，再<code>Base *p=new Derive();p-&gt;show()</code>是否能编译运行。因为这些限定符只是限制编译，而编译只看指针类型是否能调用show，显然Base的show没有放在private里，所以编译通过。而如果把show放在基类的private里，那么无法编译</li>
+</ul>
+<p>参考blog:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39755395/article/details/79751362">C++—继承与多态</a></li>
 </ul>
 
       
