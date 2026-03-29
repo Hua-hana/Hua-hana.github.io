@@ -37,9 +37,11 @@ I summarize the long-term roadmap of RustCompCert here, marking what has been fi
 - Ling Zhang, Yuting Wang*, **Jinhua Wu**, Jérémie Koenig, and Zhong Shao. Fully Composable and Adequate Verified Compilation with Direct Refinements between Open Modules. Proceedings of the ACM on Programming Languages, 8(POPL), 2024.
   [[DOI](https://doi.org/10.1145/3632914) | [PDF](https://jhc.sjtu.edu.cn/~yutingwang/files/papers/popl24.pdf) | [Slides](https://jhc.sjtu.edu.cn/~yutingwang/files/slides/2024-popl.pdf) | [Code](https://github.com/SJTU-PLV/direct-refinement-popl24-artifact)]
 
-- **Jinhua Wu**, Yuting Wang*, Meng Sun, Xiangzhe Xu, and Yichen Song. Towards a Framework for Developing Verified Assemblers for the ELF Format. The 21st Asian Symposium on Programming Languages and Systems (APLAS), 2023. [[DOI](https://doi.org/10.1007/978-981-99-8311-7_10) | [Slides](https://jhc.sjtu.edu.cn/~yutingwang/files/slides/2023-aplas.pptx) | [Artifact](https://doi.org/10.5281/zenodo.8363543)]
+- **Jinhua Wu**, Yuting Wang*, Meng Sun, Xiangzhe Xu, and Yichen Song. Towards a Framework for Developing Verified Assemblers for the ELF Format. The 21st Asian Symposium on Programming Languages and Systems (APLAS), 2023. 
+  [[DOI](https://doi.org/10.1007/978-981-99-8311-7_10) | [Slides](https://jhc.sjtu.edu.cn/~yutingwang/files/slides/2023-aplas.pptx) | [Artifact](https://doi.org/10.5281/zenodo.8363543)]
 
-- Xiangzhe Xu, Jinhua Wu, Yuting Wang*, Zhenguo Yin, and Pengfei Li. Automatic Generation and Validation of Instruction Encoders and Decoders. The 33rd International Conference on Computer-Aided Verification (CAV), 2021. [[DOI](https://doi.org/10.1007/978-3-030-81688-9_34) | [Slides](https://jhc.sjtu.edu.cn/~yutingwang/files/slides/2021-cav-25mins.pptx) | [Artifact](https://zenodo.org/record/4720184#.YNBOZGgzZPY)]
+- Xiangzhe Xu, **Jinhua Wu**, Yuting Wang*, Zhenguo Yin, and Pengfei Li. Automatic Generation and Validation of Instruction Encoders and Decoders. The 33rd International Conference on Computer-Aided Verification (CAV), 2021. 
+  [[DOI](https://doi.org/10.1007/978-3-030-81688-9_34) | [Slides](https://jhc.sjtu.edu.cn/~yutingwang/files/slides/2021-cav-25mins.pptx) | [Artifact](https://zenodo.org/record/4720184#.YNBOZGgzZPY)]
 
 ## Preprint
 
