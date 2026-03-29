@@ -1,0 +1,31 @@
+title: Your Name
+author:
+  name: Your Name
+  email: you@example.com
+
+description: >
+  Personal website for Your Name.
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  quiet_deps: true
+  silence_deprecations: [import]
+
+minima:
+  skin: classic
+  nav_pages:
+    - about.md
+  show_excerpts: false
+  social_links:
+    - title: GitHub
+      icon: github
+      url: "https://github.com/your-username"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/your-profile/"
+  hide_site_feed_link: true
