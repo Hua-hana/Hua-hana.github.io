@@ -5,7 +5,7 @@ title: ""
 
 # **Jinhua Wu**
 
-I am a fourth-year PhD student in [SJTU-PLV](https://github.com/SJTU-PLV) at **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)**. I am advised by Prof. [Yuting Wang](https://jhc.sjtu.edu.cn/~yutingwang/).
+Hi! I am a fourth-year PhD student in [SJTU-PLV](https://github.com/SJTU-PLV) at **[Shanghai Jiao Tong University](https://en.sjtu.edu.cn/)**. I am advised by Prof. [Yuting Wang](https://jhc.sjtu.edu.cn/~yutingwang/).
 
 Email: \<first name>.\<last name>@sjtu.edu.cn
 
@@ -13,20 +13,23 @@ Email: \<first name>.\<last name>@sjtu.edu.cn
 
 [Google Scholar](https://scholar.google.com/citations?user=FL33E5wAAAAJ&hl=en)
 
+
 # **Research**
 
 My current interests include verified compilation, Rust formalization and verification, and techniques for improving the usability of formal verification in critical systems such as operating systems.
 
 I am currently working on a **verified Rust compiler** based on [CompCert](https://compcert.org/), which we call **RustCompCert**. Our goal is to formalize the most important compilation and checking passes in the official Rust compiler, including Drop Elaboration and Borrow Checking. The language we support is a safe, sequential subset. We exclude features such as polymorphism, traits, concurrency, and higher-order functions. Although unsafe code cannot be written directly in the language, we aim to support interoperability between safe and unsafe modules using techniques from [**verified compositional compilation**](https://dl.acm.org/doi/10.1145/3632914).
 
-We have developed a workable prototype of RustCompCert, which we test extensively with a range of interesting cases, including borrow-checking examples (e.g., cases rejected by NLL but accepted by Polonius), safe Rust and C composition, and examples I collected from online discussions in the Rust community and from published papers.
+The correctness of the Rust compiler is significant. Not only because we require the compiler to preserve the semantics of the source programs to the target (which is formalized as the [**Semantics preservation theorem**](https://compcert.org/motivations.html#:~:text=a%20correct%20compiler%3A-,Semantic%20preservation%20theorem,-%3A%0AFor%20all)), but also because the Rust compiler claims to provide memory safety guarantee, which comes from the correctness of its **borrow checker**. Therefore, in addition to provide semantics preservation guarantee, the verified compiler should also provide memory safety guarantee for the compiled (or checked) programs. But this is not the end of the story, we also aim to handle unsafe code! The challenge here is how to express the contract between safe and unsafe code? For this problems, we aim to provide a scheme of supporting interoperation between safe and unsafe code using techniques from verified compositional compilation.
+
+For now, we have developed a workable prototype of RustCompCert, which we test extensively with a range of interesting cases, including borrow-checking examples (e.g., cases rejected by NLL but accepted by Polonius), safe Rust and C composition, and examples I collected from online discussions in the Rust community and from published papers.
 
 I summarize the long-term roadmap of RustCompCert here, marking what has been finished and what has not:
 
 - [x] A verified compiler for an ownership subset of Rust (i.e., Rust without reference), which serves as the framework of RustCompCert.
 - [ ] Formalization and verification of the borrow checking algorithm:
   + [x] Implement the borrow checker based on Polonius
-  + [ ] Verify the borrow checker (I already have an idea of how to prove it and am currently working on it)
+  + [ ] Verify the borrow checker. This is the most difficult part because we aim to fully verify a borrow checking algorithm. But I already have an idea of how to prove it and am currently working on it.
 - [ ] Support realistic Rust code. For example, using tools like [Charon](https://github.com/AeneasVerif/charon) to translate real Rust code to our language subset.
 - [ ] Connect our verified compiler to some Rust verification tools to achieve end-to-end program verification.
 
