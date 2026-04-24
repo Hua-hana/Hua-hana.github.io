@@ -52,6 +52,10 @@ I summarize the long-term roadmap of RustCompCert here, marking what has been fi
 
 - **Jinhua Wu**, Yuting Wang, Liukun Yu, Linglong Meng. RustCompCert: A Verified and Verifying Compiler for a Sequential Subset of Rust. [URL](https://arxiv.org/abs/2602.07455)
 
+## Talks
+
+- **Jinhua Wu**, Yuting Wang, Liukun Yu, Linglong Meng. RustCompCert: A Verified and Verifying Compiler for a Sequential Subset of Rust. [Rust Verification Workshop 2026](https://sites.google.com/view/rustverify2026)  [[slide](assets/talks/RustCompCert_RW2026.pdf)]
+
 
 <!-- # **Teaching Experience**
 
